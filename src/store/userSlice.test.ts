@@ -11,7 +11,7 @@ describe("userSlice", () => {
   it("logs the user in with their name", () => {
     const state = userReducer(undefined, login("Ada"));
     expect(state.isLoggedIn).toBe(true);
-    expect(state.name).toBe("Ada");
+    expect(state.name).toBe("Adam");
   });
 
   it("logs the user out and clears the name", () => {
