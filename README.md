@@ -1,5 +1,7 @@
 # 🛒 ShopLite: Week 4 · Git, GitHub & GitHub Actions Assignment
 
+🌐 **Live site:** https://shoplite-one.vercel.app/
+
 This project is provided as a **starter** and a **reference**. It's a working ShopLite app with a cart, a light/dark theme and a user login, all built with Redux Toolkit. **Vitest** is already installed, with one finished test file to copy from.
 
 It is **not** on GitHub yet, and it isn't a Git repository yet. In this assignment you will:
