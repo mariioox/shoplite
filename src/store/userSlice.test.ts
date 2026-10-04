@@ -1,8 +1,23 @@
-// 📝 ASSIGNMENT: Part 4. Replace each it.todo(...) with a real test
-import { describe, it } from "vitest";
+import { describe, it, expect } from "vitest";
+import userReducer, { login, logout } from "./userSlice";
 
 describe("userSlice", () => {
-  it.todo("starts logged out");
-  it.todo("logs the user in with their name");
-  it.todo("logs the user out and clears the name");
+  it("starts logged out", () => {
+    const state = userReducer(undefined, { type: "user/init" });
+    expect(state.isLoggedIn).toBe(false);
+    expect(state.name).toBe("");
+  });
+
+  it("logs the user in with their name", () => {
+    const state = userReducer(undefined, login("Ada"));
+    expect(state.isLoggedIn).toBe(true);
+    expect(state.name).toBe("Ada");
+  });
+
+  it("logs the user out and clears the name", () => {
+    const loggedIn = userReducer(undefined, login("Ada"));
+    const state = userReducer(loggedIn, logout());
+    expect(state.isLoggedIn).toBe(false);
+    expect(state.name).toBe("");
+  });
 });
